@@ -271,7 +271,7 @@ interface DataManagerStatic {
     selectSavefileForNewGame(): void;
     makeSavefileInfo(): void;
     makeSaveContents(): MV.SaveContents;
-    extractSaveContents(contents: MV.SaveContents);
+    extractSaveContents(contents: MV.SaveContents): void;
 }
 declare var DataManager: DataManagerStatic;
 
@@ -465,7 +465,12 @@ interface StorageManagerStatic {
     localFilePath(savefileId: number): string;
     webStorageKey(savefileId: number): string;
 }
-declare var StorageManager: StorageManagerStatic;
+//declare var StorageManager: StorageManagerStatic;
+//StorageManager is also declared at lib.dom.d.ts, we cannot declare it with type StorageManagerStatic.
+//please use window.StorageManager when you need to access this static class.
+interface Window{
+    StorageManager: StorageManagerStatic;
+}
 
 /**
  * TextManager

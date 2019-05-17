@@ -18,3 +18,5 @@
 * [rmmv.d.ts](https://github.com/AsterAtwood/rmmv.d.ts)
 
 如果你发现了任何问题，欢迎提出Issue或者Pull Request！
+
+因为StorageManager和lib.dom.d.ts内的StorageManager重名，所以当访问StorageManager时请使用`window.StorageManager.load(...)`

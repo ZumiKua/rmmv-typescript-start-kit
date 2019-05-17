@@ -16,3 +16,5 @@ Thanks for all providers of those components (pixi.d.ts, fps-meter.d.ts, lz-stri
 * [rmmv.d.ts](https://github.com/AsterAtwood/rmmv.d.ts)
 
 Feel free to issue or pull request if you find any problem.
+
+As a workaround to the name conflict of StorageManager, please use `window.StorageManager.load(...)` when accessing StorageManager.

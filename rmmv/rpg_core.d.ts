@@ -613,7 +613,7 @@ interface GraphicsStatic {
      * @method setLoadingImage
      * @param {String} Path of image
      */
-    setLoadingImage(src: string);
+    setLoadingImage(src: string) : void;
 
     /**
      * Initializes the counter for displaying the "Now Loading" image.
@@ -1661,7 +1661,7 @@ interface String {
      * @param {String} string The string to search for
      * @return {Boolean} True if the string contains a given string
      */
-    contains(string): boolean;
+    contains(string: string): boolean;
 
     /**
      * Replaces %1, %2 and so on in the string to the arguments.
@@ -2007,7 +2007,7 @@ declare class Sprite extends PIXI.Sprite {
      * @property filters
      * @type Array<PIXI.Filter>
      */
-    filters: Array<PIXI.Filter>;
+    filters: Array<PIXI.Filter<any>>;
 
     /**
      * [read-only] The array of children of the sprite.
@@ -2027,7 +2027,7 @@ declare class Sprite extends PIXI.Sprite {
 
     spriteId: number;
     opaque: boolean;
-    voidFilter: PIXI.Filter;
+    voidFilter: PIXI.Filter<{}>; // voidFilter is a VoidFilter, which has zero uniforms.
 
     /**
      * The basic object that is rendered to the game screen.
@@ -2110,7 +2110,7 @@ declare class Sprite extends PIXI.Sprite {
      * @param {PIXI.DisplayObject} child The child to add
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChild(child: PIXI.DisplayObject): PIXI.DisplayObject;
+    addChild<T extends PIXI.DisplayObject>(child: T): T;
 
     /**
      * Adds a child to the container at a specified index.
@@ -2120,7 +2120,7 @@ declare class Sprite extends PIXI.Sprite {
      * @param {Number} index The index to place the child in
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChildAt(child: PIXI.DisplayObject, index: number): PIXI.DisplayObject;
+    addChildAt<T extends PIXI.DisplayObject>(child: T, index: number): T;
 
     /**
      * Removes a child from the container.
@@ -2260,7 +2260,7 @@ declare class Stage extends PIXI.Container {
      * @param {PIXI.DisplayObject} child The child to add
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChild(child: PIXI.DisplayObject): PIXI.DisplayObject;
+    addChild<T extends PIXI.DisplayObject>(child: T): T;
 
     /**
      * Adds a child to the container at a specified index.
@@ -2270,7 +2270,7 @@ declare class Stage extends PIXI.Container {
      * @param {Number} index The index to place the child in
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChildAt(child: PIXI.DisplayObject, index: number): PIXI.DisplayObject;
+    addChildAt<T extends PIXI.DisplayObject>(child: T, index: number): T;
 
     /**
      * Removes a child from the container.
@@ -2444,7 +2444,7 @@ declare class Tilemap extends PIXI.Container {
      * @param {Number} height The height of the map in number of tiles
      * @param {Array} data The one dimensional array for the map data
      */
-    setData(width: number, height: number, data: Array<number>);
+    setData(width: number, height: number, data: Array<number>) : void;
 
     /**
      * Checks whether the tileset is ready to render.
@@ -2482,7 +2482,7 @@ declare class Tilemap extends PIXI.Container {
      * @param {PIXI.DisplayObject} child The child to add
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChild(child: PIXI.DisplayObject): PIXI.DisplayObject;
+    addChild<T extends PIXI.DisplayObject>(child: T): T;
 
     /**
      * Adds a child to the container at a specified index.
@@ -2492,7 +2492,7 @@ declare class Tilemap extends PIXI.Container {
      * @param {Number} index The index to place the child in
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChildAt(child: PIXI.DisplayObject, index: number): PIXI.DisplayObject;
+    addChildAt<T extends PIXI.DisplayObject>(child: T, index: number): T;
 
     /**
      * Removes a child from the container.
@@ -4085,7 +4085,7 @@ declare abstract class _Window extends PIXI.Container {
      * @param {PIXI.DisplayObject} child The child to add
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChild(child: PIXI.DisplayObject): PIXI.DisplayObject;
+    addChild<T extends PIXI.DisplayObject>(child: T): T;
 
     /**
      * Adds a child to the container at a specified index.
@@ -4095,7 +4095,7 @@ declare abstract class _Window extends PIXI.Container {
      * @param {Number} index The index to place the child in
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChildAt(child: PIXI.DisplayObject, index: number): PIXI.DisplayObject;
+    addChildAt<T extends PIXI.DisplayObject>(child: T, index: number): T;
 
     /**
      * Removes a child from the container.
@@ -4270,7 +4270,7 @@ declare class WindowLayer extends PIXI.Container {
      */
     parent: PIXI.Container;
 
-    voidFilter: PIXI.Filter;
+    voidFilter: PIXI.Filter<{}>;
 
     /**
      * The layer which contains game windows.
@@ -4305,7 +4305,7 @@ declare class WindowLayer extends PIXI.Container {
      * @param {PIXI.DisplayObject} child The child to add
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChild(child: PIXI.DisplayObject): PIXI.DisplayObject;
+    addChild<T extends PIXI.DisplayObject>(child: T): T;
 
     /**
      * Adds a child to the container at a specified index.
@@ -4315,7 +4315,7 @@ declare class WindowLayer extends PIXI.Container {
      * @param {Number} index The index to place the child in
      * @return {PIXI.DisplayObject} The child that was added
      */
-    addChildAt(child: PIXI.DisplayObject, index: number): PIXI.DisplayObject;
+    addChildAt<T extends PIXI.DisplayObject>(child: T, index: number): T;
 
     /**
      * Removes a child from the container.
@@ -4340,7 +4340,7 @@ declare class WindowLayer extends PIXI.Container {
      * @param {PIXI.CanvasRenderer} renderer
      * @private
      */
-    renderCanvas(renderer: PIXI.CanvasRenderer);
+    renderCanvas(renderer: PIXI.CanvasRenderer) : void;
 
     /**
      * @method _renderWebGL
@@ -4433,7 +4433,7 @@ declare class CacheMap {
     getItem(key: string): any;
 
     clear(): void;
-    setItem(key, item): CacheEntry;
+    setItem(key: string, item: any): CacheEntry;
     update(ticks: number, delta: number): void;
 }
 
