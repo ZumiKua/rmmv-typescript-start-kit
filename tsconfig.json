@@ -4,6 +4,5 @@
         "target": "es5",
         "module": "none"
     },
-    "files": ["rmmv/test.ts"],
     "include": ["pixi/*.d.ts", "lz-string/*.d.ts", "fps-meter/*.d.ts", "rmmv/*.d.ts"]
 }
