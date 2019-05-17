@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es5"
+    },
+    "include": ["pixi/*.d.ts", "lz-string/*.d.ts", "fps-meter/*.d.ts", "rmmv/*.d.ts"]
+}
