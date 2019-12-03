@@ -303,7 +303,7 @@ declare class Bitmap {
      * @param {String} align The alignment of the text
      */
     drawText(text: string, x: number, y: number,
-             maxWidth: number, lineHeight: number, align: string): void;
+             maxWidth: number, lineHeight: number, align?: string): void;
 
     /**
      * Returns the width of the specified text.

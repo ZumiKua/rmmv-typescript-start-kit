@@ -42,7 +42,7 @@ declare class Scene_Base extends Stage {
 declare class Scene_Boot extends Scene_Base {
     protected _startDate: Date;
 
-    loadSystemImages(): void;
+    static loadSystemImages(): void;
     loadSystemWindowImage(): void;
     isGameFontLoaded(): boolean;
     updateDocumentTitle(): void;

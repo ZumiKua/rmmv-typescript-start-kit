@@ -305,6 +305,23 @@ interface ImageManagerStatic {
     isObjectCharacter(filename: string): boolean;
     isBigCharacter(filename: string): boolean;
     isZeroParallax(filename: string): boolean;
+
+    reserveAnimation(   filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveBattleback1( filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveBattleback2( filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveEnemy(       filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveCharacter(   filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveFace(        filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveParallax(    filename:string, hue?:number, reservationId?:number):Bitmap;
+    reservePicture(     filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveSvActor(     filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveSvEnemy(     filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveSystem(      filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveTileset(     filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveTitle1(      filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveTitle2(      filename:string, hue?:number, reservationId?:number):Bitmap;
+    reserveBitmap(      folder:string, filename:string, hue?:number, smooth?:boolean, reservationId?:number):Bitmap;
+    reserveNormalBitmap(path:string, hue:number, reservationId:number):Bitmap;
 }
 declare var ImageManager: ImageManagerStatic;
 
