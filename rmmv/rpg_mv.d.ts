@@ -35,6 +35,8 @@ declare namespace MV {
         ext: any;
     }
     export interface TextState {
+        text: string;
+        height: number;
         index: number;
         x: number;
         y: number;
