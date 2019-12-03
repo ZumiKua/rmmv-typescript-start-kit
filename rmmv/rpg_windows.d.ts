@@ -88,9 +88,9 @@ declare class Window_Base extends _Window {
     drawFace(faceName: string, faceIndex: number, x: number, y: number, width?: number, height?: number): void;
     drawCharacter(characterName: string, characterIndex: number, x: number, y: number): void;
     drawGauge(x: number, y: number, width: number, rate: number, color1: string, color2: string): void;
-    hpColor(actor: Game_Actor): void;
-    mpColor(actor: Game_Actor): void;
-    tpColor(actor: Game_Actor): void;
+    hpColor(actor: Game_Actor): string;
+    mpColor(actor: Game_Actor): string;
+    tpColor(actor: Game_Actor): string;
     drawActorCharacter(actor: Game_Actor, x: number, y: number): void;
     drawActorFace(actor: Game_Actor, x: number, y: number, width?: number, height?: number): void;
     drawActorName(actor: Game_Actor, x: number, y: number, width?: number): void;
